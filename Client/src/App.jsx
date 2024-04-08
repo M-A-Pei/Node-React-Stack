@@ -17,7 +17,17 @@ function App() {
       </div>
 
       <ul>
-        {iceCreamList.map((v, i)=>{return (<li key={i}>{v.flavor}</li>)})}
+        {iceCreamList.map((v, i)=>{return (
+          <div className='card'>
+            <div className='flavor'><h4>{v.flavor}</h4></div>
+
+            <div className='desc'>
+              {v.desc}
+            </div>
+            
+            <div className='color'>{v.color}</div>
+          </div>
+        )})}
       </ul>
     </>
   )

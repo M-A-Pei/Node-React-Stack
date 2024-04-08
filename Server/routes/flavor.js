@@ -8,7 +8,6 @@ const bodyParser = require("body-parser")
 router.get("/", async (req, res)=>{
     const listofflavor = await iceCream.findAll()
     res.json(listofflavor)
-    console.log(listofflavor)
 })
 
 router.get("/about", (req, res)=>{
