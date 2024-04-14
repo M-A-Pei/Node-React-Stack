@@ -1,34 +1,24 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import Container from 'react-bootstrap/Container'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import DefaultNavbar from './assets/navbar'
+import {BrowserRouter as Router,Route, Routes} from "react-router-dom"
+import List from './routes/list'
+import Home from './routes/home'
 
 function App() {
 
-  const [iceCreamList, setIceCreamList] = useState([])
-  useEffect(() => {
-    axios.get("http://localhost:3001/flavor").then((response) => {
-        setIceCreamList(response.data)
-    })
-  }, [])
-
   return (
     <>
-      <div className='title'>
-        this is a list of ice cream flavors
-      </div>
+      <DefaultNavbar/>
 
-      <ul>
-        {iceCreamList.map((v, i)=>{return (
-          <div className='card'>
-            <div className='flavor'><h4>{v.flavor}</h4></div>
-
-            <div className='desc'>
-              {v.desc}
-            </div>
-            
-            <div className='color'>{v.color}</div>
-          </div>
-        )})}
-      </ul>
+      <Container>
+        <Router>
+          <Routes>
+            <Route path="/" exact element={<Home/>} />
+            <Route path="/list" exact element={<List/>} />
+          </Routes>
+        </Router>
+      </Container>
     </>
   )
 }
