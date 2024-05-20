@@ -10,6 +10,8 @@ export default function DefaultNavbar(){
         <Nav className="me-auto">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/list">List</Nav.Link>
+          <Nav.Link href="/newdata">new flavor</Nav.Link>
+          <Nav.Link href="/table">Table</Nav.Link>
           <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
